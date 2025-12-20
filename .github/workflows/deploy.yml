@@ -2,7 +2,7 @@ name: Deploy Manuel Pereira Web
 
 on:
   push:
-    branches: ["main"] # O 'master', revisa tu rama
+    branches: ["master"] # O 'master', revisa tu rama
 
 jobs:
   deploy:
