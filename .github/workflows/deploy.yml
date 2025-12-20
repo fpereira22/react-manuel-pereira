@@ -1,0 +1,41 @@
+name: Deploy Manuel Pereira Web
+
+on:
+  push:
+    branches: ["main"] # O 'master', revisa tu rama
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 📦 Install & Build
+        # Agrega 'env:' aquí si tienes claves de entorno (Firebase, etc)
+        run: |
+          npm install
+          npm run build
+
+      - name: 🚀 Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          NEXT_PUBLIC_GEMINI_API_KEY: ${{secrets.NEXT_PUBLIC_GEMINI_API_KEY}}
+          local-dir: ./out/
+          
+          # ESTO ES LO QUE CAMBIA:
+          server-dir: ./public_html/manuel-pereira.sppa.cl/
+          
+          protocol: ftps
+          exclude: |
+            **/.git*
+            **/.git*/**
