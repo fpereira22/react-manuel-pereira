@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "Sociedad Pereira Alarcón | Hub Digital",
   description: "Punto de acceso a los servicios de Ingeniería de Software (Felipe Pereira) y Fotografía Profesional (Manuel Pereira).",
   robots: "index, follow", // Importante para que Google sepa que puede entrar
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
