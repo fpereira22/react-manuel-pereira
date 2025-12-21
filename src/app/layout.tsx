@@ -6,9 +6,8 @@ const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: "Sociedad Pereira Alarcón | Hub Digital",
-  description: "Punto de acceso a los servicios de Ingeniería de Software (Felipe Pereira) y Fotografía Profesional (Manuel Pereira).",
-  robots: "index, follow", // Importante para que Google sepa que puede entrar
+  title: "Manuel Pereira - Fotografía", 
+  description: "Portafolio fotográfico de Manuel Pereira. Paisajes, fauna y fotografía profesional en Paine, Chile.",  robots: "index, follow", // Importante para que Google sepa que puede entrar
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
